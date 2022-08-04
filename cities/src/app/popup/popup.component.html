@@ -1,0 +1,14 @@
+
+<div class="popup">
+<label>city</label>
+
+    <select >
+        <option #box *ngFor="let city of cities" [value]="city.id" [(ngModel)]="streetUpdate.cityId">{{city.name}}</option>
+    </select>
+    <input [(ngModel)]="streetUpdate.name" name="name"/>
+    <button (click)="save()">save</button>
+
+</div>
+
+
+   

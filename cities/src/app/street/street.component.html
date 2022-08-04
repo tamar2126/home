@@ -1,0 +1,20 @@
+<input #box type="text" (keyup)="search(box.value)" />
+<form   #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value.name, userForm.value.city)">
+    
+    <label>הוספה</label>
+    <select >
+        <option name="city" *ngFor="let city of cities" [value]="city.id" >{{city.name}}</option>
+    </select>
+    <input  name="name"/>
+    <button type="submit">save</button>
+
+</form>
+<div class="container">
+    <ul class="grid-container">
+        <li class="grid-item" *ngFor="let item of copyStreet">
+            {{item.name}}
+            <button (click)="edit(item)" >עריכה</button>
+            <button (click)="delete(item)">מחיקה</button>
+        </li>
+    </ul>
+</div>
